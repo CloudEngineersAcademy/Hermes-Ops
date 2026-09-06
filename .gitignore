@@ -1,0 +1,3 @@
+# Environment secrets — NEVER commit
+.env
+save.log
