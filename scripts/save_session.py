@@ -18,6 +18,7 @@ import json
 import subprocess
 import datetime
 from pathlib import Path
+from typing import Optional
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -87,7 +88,9 @@ def git_commit_and_push(commit_msg):
 # ---------------------------------------------------------------------------
 # main
 # ---------------------------------------------------------------------------
-def save_transcript(transcript_text: str, metadata: dict | None = None):
+from typing import Optional
+
+def save_transcript(transcript_text: str, metadata: Optional[dict] = None):
     """Save a session transcript to the sessions directory."""
     ensure_dir(SESSION_DIR)
 
