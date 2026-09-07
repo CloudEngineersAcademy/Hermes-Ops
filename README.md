@@ -39,10 +39,20 @@ Hermes-Ops/
 
 The repo is accessed using a GitHub Personal Access Token (PAT) with `repo` scope. The token is stored securely and only used for pushing to this repository.
 
+
+## Security — Secret Redaction
+
+Before any transcript is saved to the repo, the saver scans it for secrets (GitHub PATs, bearer tokens, long hex strings) and redacts them with `***REDACTED_...***` markers. This prevents accidentally committing credentials that may have been pasted in chat.
+
+Patterns detected:
+- GitHub PATs (`ghp_`, `gho_`, `ghu_`, etc.)
+- Bearer tokens
+- Long hex strings (40+ chars, e.g. SHA hashes, API keys)
+
 ## Getting Started
 
 This is the initial commit — setting up the repo structure and documentation.
 
 ---
 
-*Last updated: 2026-09-05*
+*Last updated: 2026-09-06*
